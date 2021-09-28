@@ -1,0 +1,212 @@
+$gopher-width: 360px;
+$gopher-color: #69d7e2;
+$ear-size: 75px;
+$border-style: 3px solid black;
+$gopher-skin-color: #f6d2a2;
+
+.gopher-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & .gopher-ears {
+    width: calc($gopher-width + 20px);
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(115px);
+
+    & .gopher-ear {
+      width: $ear-size;
+      height: $ear-size;
+      background: $gopher-color;
+      border-radius: 50%;
+      border: $border-style;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & .inner-ear {
+        width: calc($ear-size * 0.5);
+        height: calc($ear-size * 0.5);
+        background: black;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  & .gopher-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: $gopher-width;
+    height: 400px;
+    background: $gopher-color;
+    border-radius: 42% 42% 0% 0%;
+    border: $border-style;
+    border-bottom: none;
+    margin: 0 auto;
+    z-index: 5;
+  
+    & .gopher-eyes {
+      width: calc($gopher-width * 0.9);
+      display: flex;
+      justify-content: space-evenly;
+      transform: translateY(42px);
+  
+      & .gopher-eye {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: white;
+        border: $border-style;
+        display: flex;
+        align-items: center;
+  
+        & .gopher-pupil {
+          width: 42px;
+          height: 42px;
+          background: black;
+          border-radius: 50%;
+          transform: translateX(10px);
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
+  
+          & .gopher-shine {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: white;
+            transform: translate(-8px, -8px);
+          }
+        }
+      }
+    }
+
+    & .nose {
+      transform: translate(0, 25px);
+      height: 35px;
+      width: 55px;
+      background-color: black;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    & .mouth {
+      display: flex;
+      transform: translate(-10px, -20px);
+
+      & .mouth-left {
+        transform: rotate(-30deg) translate(-5px, 40px);
+        height: 30px;
+        width: 60px;
+        background-color: $gopher-skin-color;
+        border-radius: 50% 0% 0% 50%;
+        border: $border-style;
+        display: block;
+        border-right: 0;
+      }
+      
+      & .mouth-right {
+        transform: rotate(18deg) translate(20px, 30px);
+        height: 30px;
+        width: 60px;
+        background-color: $gopher-skin-color;
+        border-radius: 0% 50% 50% 0%;
+        border: $border-style;
+        display: block;
+        border-left: 0;
+      }
+    }
+
+    & .teeth {
+      display: flex;
+      height: 200px;
+      width: 150px;
+      flex-direction: row;
+      justify-content: center;
+    }
+    
+    & .tooth {
+      background: white;
+      border-radius: 0% 0% 40% 40%;
+      height: 60px;
+      width: 25px;
+      border: $border-style;
+      transform: translateX(5px);
+      z-index: -1;
+    }
+  }
+
+  & .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: $gopher-width;
+    height: 200px;
+    background: $gopher-color;
+    border-radius: 0% 0% 42% 42%;
+    border: $border-style;
+    border-top: none;
+    margin: 0 auto;
+    z-index: 5;
+  }
+
+  & .arms {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 800px;
+    transform: translateY(-300px);
+
+    & .hand {
+      height: 80px;
+      width: 30px;
+      background: white;
+      border: $border-style;
+      border-radius: 40%;
+      background-color: $gopher-skin-color;
+
+      & .nail {
+        width: 30px;
+        height: 30px;
+        border-bottom: $border-style;
+        transform: rotate(95deg) translate(50px, -25px);
+      }
+    }
+  }
+
+  & .feet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 350px;
+    transform: translateY(-150px);
+
+    & .foot {
+      background: white;
+      border-radius: 40%;
+      height: 80px;
+      width: 30px;
+      border: $border-style;
+      background-color: $gopher-skin-color;
+
+      & .nail {
+        width: 30px;
+        height: 30px;
+        border-bottom: $border-style;
+        transform: rotate(95deg) translate(50px, -25px);
+      }
+    }
+  }
+}
+
+/* Aplicarle estilos a las clases separadas por espacios */
+
+.xleft {
+  transform: rotate(40deg);
+}
+
+.xright {
+  transform: rotate(-40deg);
+}
